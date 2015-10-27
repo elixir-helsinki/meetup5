@@ -61,4 +61,15 @@ $ heroku buildpacks:add https://github.com/gjaldon/heroku-buildpack-phoenix-stat
 2015-10-27T19:07:45.216705+00:00 app[web.1]: 19:07:45.216 [info] Running Crux.Endpoint with Cowboy on http://arcane-woodland-8154.herokuapp.com:41556
 
 
+Tried to visit https://arcane-woodland-8154.herokuapp.com/posts
+
+BANG!
+Server internal error
+
+$ heroku run mix ecto.migrate
+
+Now my app works in the cloud too!
+
+Visit:
+https://arcane-woodland-8154.herokuapp.com/posts
 
