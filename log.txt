@@ -24,3 +24,26 @@ $ mix ecto.migrate
 $ mix phoenix.server
 
 At this point we can add new posts and view them from the application, easy!
+
+So next up some Heroku stuff
+
+Uncomment line for config/prod.secret.exs from .gitignore
+Changed prod.secret.exs to use ENV so thats safe.
+
+Then I used https://github.com/HashNuke/heroku-buildpack-elixir
+
+$ heroku create --buildpack "https://github.com/HashNuke/heroku-buildpack-elixir.git"
+
+> Go to heroku console and create a Hobby database
+
+Configure prod.exs to use DATABASE_URL
+
+OK FUCK IT DID NOT WORK SINCE I FAILED WITH THE BUILDPACKS :D
+
+Attempt #2
+
+$ heroku buildpacks:set https://github.com/gjaldon/phoenix-static-buildpack
+$ heroku buildpacks:add --index 1 https://github.com/HashNuke/heroku-buildpack-elixir
+
+
+
