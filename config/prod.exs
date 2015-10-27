@@ -14,7 +14,7 @@ use Mix.Config
 config :crux, Crux.Endpoint,
   http: [port: {:system, "PORT"}],
   url: [scheme: "https", host: "arcane-woodland-8154.herokuapp.com", port: 443],
-  cache_static_manifest: "priv/static/manifest.json"
+  cache_static_manifest: "priv/static/manifest.json",
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   secret_key_base: System.get_env("SECRET_KEY_BASE")
 
