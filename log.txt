@@ -48,4 +48,17 @@ $ heroku buildpacks:add --index 1 https://github.com/HashNuke/heroku-buildpack-e
 https://github.com/phoenixframework/phoenix_guides
 https://github.com/phoenixframework/phoenix_guides/blob/master/deployment/E_heroku.md
 
+Make sure the buildpacks are in correct order !
+
+$ heroku buildpacks:clear 
+$ heroku buildpacks:add https://github.com/HashNuke/heroku-buildpack-elixir.git
+$ heroku buildpacks:add https://github.com/gjaldon/heroku-buildpack-phoenix-static.git
+
+\o/
+
+2015-10-27T19:07:33.622638+00:00 heroku[web.1]: State changed from crashed to starting
+2015-10-27T19:07:37.866112+00:00 heroku[web.1]: Starting process with command `mix phoenix.server`
+2015-10-27T19:07:45.216705+00:00 app[web.1]: 19:07:45.216 [info] Running Crux.Endpoint with Cowboy on http://arcane-woodland-8154.herokuapp.com:41556
+
+
 
