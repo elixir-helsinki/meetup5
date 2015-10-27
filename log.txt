@@ -1,0 +1,26 @@
+
+Start our local database
+
+$ cd vagrant-postgresql
+$ script/database up
+
+takes a while...
+
+$ vagrant ssh
+vagrant@vagrant-ubuntu-trusty-64:~$ psql -h localhost -U postgres --password
+> enter "password" as password :D
+
+postgres=# create database crux_dev;
+CREATE DATABASE
+
+Now we have a database to use for development
+
+Next we need to generate controller/model/etc so we can start storing "Gists"
+
+$ mix phoenix.gen.html Post posts name:string content:string tags:string
+
+$ mix ecto.migrate
+
+$ mix phoenix.server
+
+At this point we can add new posts and view them from the application, easy!
