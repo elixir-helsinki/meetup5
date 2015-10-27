@@ -45,5 +45,7 @@ Attempt #2
 $ heroku buildpacks:set https://github.com/gjaldon/phoenix-static-buildpack
 $ heroku buildpacks:add --index 1 https://github.com/HashNuke/heroku-buildpack-elixir
 
+https://github.com/phoenixframework/phoenix_guides
+https://github.com/phoenixframework/phoenix_guides/blob/master/deployment/E_heroku.md
 
 
