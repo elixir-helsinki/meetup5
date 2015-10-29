@@ -1,12 +1,24 @@
 defmodule Crux.PostController do
   use Crux.Web, :controller
 
+  import Ecto.Query
+
   alias Crux.Post
 
   plug :scrub_params, "post" when action in [:create, :update]
 
   def index(conn, _params) do
     posts = Repo.all(Post)
+    render(conn, "index.html", posts: posts)
+  end
+
+  def tag(conn, %{"tag" => tag}) do
+
+    query = from p in Post,
+            where: like(p.tags, ^"%#{tag}%")
+
+    posts = Repo.all(query)
+
     render(conn, "index.html", posts: posts)
   end
 

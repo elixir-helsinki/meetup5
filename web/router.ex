@@ -18,6 +18,8 @@ defmodule Crux.Router do
 
     get "/", PageController, :index
 
+    get "/tag/:tag", PostController, :tag
+
     resources "/posts", PostController
   end
 
